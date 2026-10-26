@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.crud import course as crud_course
+from app.crud import user as crud_user
 from app.schemas.course import CourseCreate, CourseRead, CourseUpdate
 
 router = APIRouter(prefix="/courses", tags=["courses"])

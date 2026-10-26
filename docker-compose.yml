@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:18.3
+    container_name: lab_tracker_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: labtracker
+      POSTGRES_PASSWORD: labtracker
+      POSTGRES_DB: lab_tracker
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data:

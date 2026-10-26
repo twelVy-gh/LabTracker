@@ -26,3 +26,17 @@
 1. Установите зависимости: `npm install`
 2. Запустите dev-сервер: `npm run dev`
 3. Откройте http://localhost:5173
+
+## Модель данных
+
+- **User** — пользователь (студент / преподаватель / админ)
+- **Course** — курс, у которого есть преподаватель (FK → User)
+- **Task** — задание (лаба / ДЗ), привязано к курсу и студенту (FK → Course, User)
+- **Notification** — уведомление, привязано к пользователю (FK → User)
+
+### Связи
+
+- User (teacher) 1—N Course
+- Course 1—N Task
+- User (student) 1—N Task
+- User 1—N Notification
